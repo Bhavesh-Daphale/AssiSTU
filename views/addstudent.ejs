@@ -1,0 +1,54 @@
+<%- include("header"); -%>
+    
+    <%- include("adminnavbar"); -%>
+
+
+    <section class="addStudent">
+      <div>
+
+        <div class="text">Add Student</div>
+
+          <form action="/addstudent" method="POST" class="new-student-form">
+            <div class="new-student">
+
+              <div class="div-1">
+                <label for="firstName">First Name </label><br>
+                <input name="firstName" type="text"><br>
+                <label for="email">Email </label><br>
+                <input name="email" type="email"><br>
+                <label for="rollNo">Roll No </label><br>
+                <input name="rollNo" type="number"><br>
+                <label for="birthdate">Birth Date </label><br>
+                <input type="date" name="birthdate"><br>
+              </div>
+              
+              <div class="div-2">
+                <label for="lastName">Last Name </label><br>
+                <input name="lastName" type="text"><br>
+                <label for="password">Password </label><br>
+                <input name="password" type="password"><br>
+                <label for="passingyear">Passing Year </label><br>
+                <input type="number" name="passingyear" placeholder="YYYY" min="2023" max="2030"><br>
+                <label for="gender">Gender </label><br>
+                <select name="gender">
+                  <option value="M">Male</option>
+                  <option value="F">Female</option>
+                  <option value="O">Others</option>
+                </select><br>
+              </div>
+            </div>
+            <%if(success == true && added == true) {%>
+              <h5 style="color: rgb(54, 243, 124)">Student Added Successfully</h5>
+            <%}else if(success == false && added == true){%>
+              <h5 style="color: rgb(243, 54, 54)">Student Already exists</h5>
+            <%}%>
+
+              
+            <button>Add</button>
+            
+          </form>
+        </div> 
+      </div>
+    </section>  
+
+<%- include("footer"); -%>

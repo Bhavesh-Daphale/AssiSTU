@@ -1,0 +1,64 @@
+<%- include("header"); -%>    
+<%- include("adminnavbar"); -%>
+<section class="main-section">
+    <div>
+
+      <div class="text">Update Student</div>
+
+        <form action="/updatestudent" method="POST" class="enter-student-form">
+          <div class="enter-student">
+
+            <div class="enter-div">
+              
+              <input name="rollNo" placeholder="Enter Roll No" type="number">
+              <button>Search</button>
+            </div>    
+          </div> 
+          
+        </form>
+
+
+        <% if (success == true && updated == false) { %>
+          <form action="/updatestudent/:<%=student.stu_id%>" method="POST" class="new-student-form">
+            <div class="new-student">
+
+              <div class="div-1">
+                <label for="firstName">First Name </label><br>
+                <input name="firstName" type="text" value="<%=student.first_name%>"><br>
+                <label for="email">Email </label><br>
+                <input name="email" type="email" value="<%=student.email%>"><br>
+                <!-- <label for="rollNo">Roll No </label><br>
+                <input name="rollNo" type="number"><br> -->
+                <label for="birthdate">Birth Date </label><br>
+                <input type="date" name="birthdate" value="<%=student.birth_date%>"><br>
+              </div>
+              
+              <div class="div-2">
+                <label for="lastName">Last Name </label><br>
+                <input name="lastName" type="text" value="<%=student.last_name%>"><br>
+                <!-- <label for="password">Password </label><br>
+                <input name="password" type="password"><br> -->
+                <label for="passingyear">Passing Year </label><br>
+                <input type="number" name="passingyear" value="<%=student.passing_year%>" placeholder="YYYY" min="2023" max="2030"><br>
+                <label for="gender">Gender </label><br>
+                <select name="gender" value="<%=student.gender%>">
+                  <option value="M">Male</option>
+                  <option value="F">Female</option>
+                  <option value="O">Others</option>
+                </select><br>
+              </div>
+            </div>                  
+            <button>Update</button>
+            
+          </form>
+        <% } else if (success == false && updated == true) { %>
+          <h5 style="color: rgb(243, 54, 54);padding-top: 10px">Student not found</h5>
+        <% } else if (success == true && updated == true) { %>
+          <h5 style="color: rgb(54, 243, 124);padding-top: 10px">Student data updated Successfully</h5>
+        <% } %>
+        
+      </div> 
+    </div>
+</section> 
+
+<%- include("footer"); -%>

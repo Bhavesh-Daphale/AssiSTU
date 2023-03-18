@@ -1,0 +1,55 @@
+<%- include("header"); -%>
+
+<div class="left-div">
+  <div class="form login">
+    <span class="title">Login</span>
+
+    <form action="/login" method="POST">
+      <div class="input-field">
+        <select name="role" id="role">
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+          <option value="admin">Admin</option>
+        </select>
+        <i class="bx bxs-group"></i>
+      </div>
+
+      <div class="input-field">
+        <input
+          type="text"
+          name="loginUsername"
+          placeholder="Enter your email"
+          required
+        />
+        <i class="bx bxs-envelope"></i>
+      </div>
+
+      <div class="input-field">
+        <input
+          type="password"
+          class="password"
+          name="loginPassword"
+          placeholder="Enter your password"
+          required
+        />
+        <i class="bx bxs-lock icon"></i>
+        <i class="bx bxs-hide showHidePw"></i>
+      </div>
+
+      <br />
+      <%if(wrongUser) {%>
+      <h5 style="color: red">incorrect username or password</h5>
+      <%}%>
+
+      <div class="input-field button">
+        <input type="submit" value="Sign In" />
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="img-div">
+  <img src="/images/professor.png" id="professor-img" />
+</div>
+
+<%- include("footer"); -%>

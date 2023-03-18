@@ -1,0 +1,51 @@
+<%- include("header"); -%>
+    
+    <%- include("adminnavbar"); -%>
+
+    <section class="notice-section">
+          
+        <div class="table">
+            <div class="text">View Student</div>
+
+            <table class="general">
+                <thead>
+                    <tr>
+                        <th>Roll no.</th>
+                        <th>Name</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let i=0 ; i < student.length ; i++) { %>
+                    <tr>
+                        <td><%=student[i].stu_id%></td>
+                        <td><%=student[i].first_name + " " + student[i].last_name%></td>
+                        <td><form action="/viewstudent/:<%=student[i].stu_id%>" method="POST">
+                            <input type="hidden" name="rollNo" value="<%=student[i].stu_id%>">
+                            <% if(student[i].gender == "M"){%>
+                                <button class="btn-view boys">View</button>
+                            <%}else{%>
+                                <button class="btn-view girls">View</button>
+                            <%}%>
+                        </form></td>
+                    </tr>
+                    <%}%>
+                    <!-- 
+                    </tr><tr>
+                        <td>2003041</td>
+                        <td>Bhavesh Daphale</td>
+                        <td><form action="/viewstudent/:stu_id" method="POST">
+                            <input type="hidden" value="2003041">
+                            <button class="btn-view">View</button>
+                        </form></td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+        
+
+    </section>
+
+      
+
+<%- include("footer"); -%>

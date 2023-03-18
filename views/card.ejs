@@ -1,0 +1,47 @@
+<%- include("header"); -%>
+<%- include("adminnavbar"); -%>
+
+<section class="container">
+    <div>
+      <div class="student-card">
+        <!-- <div class="card-heading">Student Details</div> -->
+  
+          <div class="card-body">
+              <div class="box-1">
+              <div class="initial"><%=init%></div>
+              <div class="detail">
+                  <p class="name"><%=student[0].first_name + " " + student[0].last_name%></p>
+                  <p class="roll"><%=student[0].stu_id%></p>
+                  
+                    <a href="/viewstudent"><button class="btn-back"><i class='bx bx-left-arrow-alt'></i></button></a>
+                  
+              </div>
+              </div>
+          <hr>
+              <div class="box-2">
+                  <div class="personal">
+                      <h3>Personal Details</h3>
+                      <p><span class="labels">Email: </span> <%=student[0].email%></p> 
+                      <div>
+                        <p><span class="labels">Birth Date: </span> <%=birth_date%></p>
+                          <p><span class="labels">Gender: </span> <%=student[0].gender%></p>
+                      </div>
+                  </div>
+                  <hr>
+                  <div class="academic">
+                      <h3>Academic details </h3>
+                      <div>
+                          <p><span class="labels">Passing Year: </span> <%=student[0].passing_year%></p>
+                          <p><span class="labels">Current Semester: </span> <%=semester%> </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+  </section>
+
+  <%- include("footer"); -%>

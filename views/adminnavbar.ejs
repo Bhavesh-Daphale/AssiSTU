@@ -1,0 +1,75 @@
+<div class="sidebar open">
+  <div class="logo-details">
+    <i class="bx bxs-book-open"></i>
+    <div class="logo_name">AssiSTU</div>
+    <i class="bx bx-menu" id="btn"></i>
+  </div>
+  <ul class="nav-list">
+    <li>
+      <a href="/viewstudent" class="search">
+        <i class="bx bx-search"></i>
+        <!-- <input type="text" placeholder="Search..."> -->
+        <span class="links_name">view Student</span>
+      </a>
+    </li>
+    <li>
+      <a href="/addstudent" class="add active">
+        <i class="bx bxs-user-check active_i"></i>
+        <span class="links_name active_link">Add Student</span>
+      </a>
+      <!-- <span class="tooltip">Dashboard</span> -->
+    </li>
+    <li>
+      <a href="/updatestudent" class="update">
+        <i class="bx bxs-edit"></i>
+        <span class="links_name">Update Student</span>
+      </a>
+      <!-- <span class="tooltip">User</span> -->
+    </li>
+    <li>
+      <a href="/deletestudent" class="delete">
+        <i class="bx bxs-user-x"></i>
+        <span class="links_name">Delete Student</span>
+      </a>
+      <!-- <span class="tooltip">Messages</span> -->
+    </li>
+    <!-- <li>
+       <a href="#">
+         <i class='bx bx-pie-chart-alt-2' ></i>
+         <span class="links_name">Analytics</span>
+       </a>
+       <span class="tooltip">Analytics</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-folder' ></i>
+         <span class="links_name">File Manager</span>
+       </a>
+       <span class="tooltip">Files</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-cog' ></i>
+         <span class="links_name">Statistics</span>
+       </a>
+       <span class="tooltip">Setting</span>
+     </li> -->
+    <li class="profile">
+      <div class="profile-details">
+        <div class="initials"><%= initials%></div>
+        <!--<img src="profile.jpg" alt="profileImg">-->
+        <div class="name_job">
+          <div class="name"><%= fullName%></div>
+          <div class="job"><%= job%></div>
+        </div>
+      </div>
+      <button>
+        <a href="/logout"><i class="bx bx-log-out" id="log_out"></i></a>
+      </button>
+    </li>
+  </ul>
+</div>
+
+<script>
+  
+</script>

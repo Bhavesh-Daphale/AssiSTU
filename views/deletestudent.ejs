@@ -1,0 +1,26 @@
+<%- include("header"); -%>
+<%- include("adminnavbar"); -%>
+
+    <section class="main-section">
+        <div>
+  
+          <div class="text">Delete Student</div>
+  
+            <form action="/deletestudent" method="POST" class="enter-student-form">
+              <div class="enter-student">
+  
+                <div class="enter-div">
+                  
+                  <input name="rollNo" placeholder="Roll No." type="number">
+                  <button>Delete</button>
+                </div>    
+              </div> 
+              <%if(success) {%>
+                <h5 style="color: rgb(54, 243, 124);padding-top: 10px">Student Removed Successfully</h5>
+              <%}%>
+            </form>
+          </div> 
+        </div>
+    </section> 
+
+<%- include("footer"); -%>
